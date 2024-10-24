@@ -1,0 +1,6 @@
+{
+  "name": "BuildScale",
+  "build": {
+    "dockerfile": "./Dockerfile"
+  }
+}
