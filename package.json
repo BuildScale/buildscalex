@@ -1,0 +1,56 @@
+{
+  "name": "buildscale",
+  "version": "0.1.0",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/buildscale/buildscale"
+  },
+  "license": "GPL-3.0",
+  "dependencies": {
+    "postinstall-postinstall": "^2.1.0"
+  },
+  "scripts": {
+    "build": "cross-env NODE_OPTIONS=\"--max-old-space-size=4096\" yarn build:deps && yarn build:prod"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "all-contributors-cli": "^6.26.1",
+    "babel-eslint": "10.1.0",
+    "concurrently": "^4.1.0",
+    "cross-env": "^6.0.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-import-resolver-webpack": "^0.8.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-react": "~7.21.2",
+    "eslint-plugin-react-hooks": "^4.1.0",
+    "eslint-plugin-react_editor": "npm:eslint-plugin-react@7.29.4",
+    "gulp": "^4.0.2",
+    "husky": "^8.0.3",
+    "jest-environment-jsdom": "^29.7.0",
+    "lerna": "^6",
+    "lint-staged": "10.5.4",
+    "prettier": "2.1.1",
+    "pretty-quick": "^3.0.0",
+    "typescript": "^5.2.2",
+    "username": "^5.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "cross-env LINT=1 eslint --fix",
+      "pretty-quick --staged"
+    ]
+  },
+  "engines": {
+    "node": "^16.0.0"
+  }
+}
